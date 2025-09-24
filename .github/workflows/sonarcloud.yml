@@ -37,7 +37,8 @@ jobs:
 
       # Step 4: Run SonarCloud Scan
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically provides this
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # You create this in SonarCloud
+  uses: SonarSource/sonarqube-scan-action@v2
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
